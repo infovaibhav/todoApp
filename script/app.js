@@ -16,7 +16,9 @@ angular.module("todoApp", [])
         ];
 
         $scope.add = function() {
-            $scope.todos.push($scope.newTodo);
+            if($scope.newTodo.text.trim().length != 0) {
+                $scope.todos.push($scope.newTodo);
+            }
             $scope.newTodo = {};
         };
 
